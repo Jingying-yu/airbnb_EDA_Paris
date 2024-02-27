@@ -47,3 +47,6 @@ po/*~
 
 # RStudio Connect folder
 rsconnect/
+
+# Airbnb original data from Inside Airbnb website
+airbnb_data.csv

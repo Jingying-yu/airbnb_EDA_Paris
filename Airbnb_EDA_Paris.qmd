@@ -1,3 +1,10 @@
+---
+title: "Airbnb EDA Paris"
+author: "Sandy Yu"
+date: "March 2nd, 2024"
+format: pdf
+editor: visual
+---
 
 # Setup
 ```{r}
@@ -61,7 +68,8 @@ write_parquet(
 rm(airbnb_data)
 ```
 
-#Data Cleaning
+
+# Data Cleaning
 ```{r}
 # split and filter out $ signs, and save price values as integers
 airbnb_data_selected <-
@@ -72,7 +80,8 @@ airbnb_data_selected <-
   )
 ```
 
-#Graphing
+
+# Graphing
 ```{r}
 #| warning: false
 airbnb_data_selected |>
@@ -120,7 +129,7 @@ airbnb_data_selected |>
   )
 ```
 
-#Superhosts under $1000
+# Superhosts under $1000
 ```{r}
 #| warning: false
 #remove all prices above 999
@@ -147,7 +156,7 @@ airbnb_data_no_superhost_nas |>
   )
 ```
 
-#Reviews Distribution
+# Reviews Distribution
 ```{r}
 #| message: false
 #setup review dataset
@@ -217,7 +226,7 @@ airbnb_data_selected |>
 ```
 
 
-#Regressions
+# Regressions
 ```{r}
 #| warning: false
 # Relationship between price and review and whether a host is a superhost
@@ -269,7 +278,7 @@ logistic_reg_superhost_response_review <-
 modelsummary(logistic_reg_superhost_response_review)
 ```
 
-#Save
+# Save
 ```{r}
 write_parquet(
   x = airbnb_data_selected, 
